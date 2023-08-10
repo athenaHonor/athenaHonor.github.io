@@ -1,179 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>自适应瀑布流+baguetteBox.js画廊效果 </title>
-<link rel="stylesheet" href="css/baguetteBox.css">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/jquery-1.10.2.js"></script> 
-<script src="js/baguetteBox.js"></script>
-</head>
-<body>
- 
- <!-- 瀑布流 -->
-<section class="gallery">
-  <div>
-    <a href="img/1.png" data-caption="标题">
-      <img src="img/1.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/2.png" data-caption="标题">
-      <img src="img/2.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/3.png" data-caption="标题">
-      <img src="img/3.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/4.png" data-caption="标题">
-      <img src="img/4.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/5.png" data-caption="标题">
-      <img src="img/5.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/6.png" data-caption="标题">
-      <img src="img/6.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/7.png" data-caption="标题">
-      <img src="img/7.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/8.png" data-caption="标题">
-      <img src="img/8.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/9.png" data-caption="标题">
-      <img src="img/9.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/10.png" data-caption="标题">
-      <img src="img/10.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/11.png" data-caption="标题">
-      <img src="img/11.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/12.png" data-caption="标题">
-      <img src="img/12.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/13.png" data-caption="标题">
-      <img src="img/13.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/14.png" data-caption="标题">
-      <img src="img/14.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/15.png" data-caption="标题">
-      <img src="img/15.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/16.png" data-caption="标题">
-      <img src="img/16.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/17.png" data-caption="标题">
-      <img src="img/17.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/18.png" data-caption="标题">
-      <img src="img/18.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/19.png" data-caption="标题">
-      <img src="img/19.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/20.png" data-caption="标题">
-      <img src="img/20.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/21.png" data-caption="标题">
-      <img src="img/21.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/22.png" data-caption="标题">
-      <img src="img/22.png" alt="First image">
-    </a>
-  </div>
-  <div>
-    <a href="img/23.png" data-caption="标题">
-      <img src="img/23.png" alt="First image">
-    </a>
-  </div>
-</section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>自适应瀑布流</title>
+    <link rel="stylesheet" href="css/baguetteBox.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.10.2.js"></script> 
+    <script src="js/baguetteBox.js"></script>
+  </head>
+  <body>
 
-<div id="goTopBtn"><span class="icon_top"></span></div>
-<script>
- baguetteBox.run('.gallery', {
-  // 配置参数
-  buttons:Boolean,//是否显示导航按钮。
-  noScrollbars:true,//是否在显示时隐藏滚动条。
-  titleTag:true,//是否使用图片上的title属性作为图片标题
-  async:false,//是否异步加载文件。
+    <section class="gallery">
+    </section>
+    <div id="goTopBtn"><span class="icon_top"></span></div>
 
-  afterShow:function(){//显示遮罩层之后的回调函数。   
-       $(".pressing").fadeIn();
-    },
-  afterHide:function(){//隐藏遮罩层之后的回调函数。 
-      $(".pressing").fadeOut(); 
-    }
-  //preload:5 预加载多少个文件。
-  // onChange: function(currentIndex, imagesCount){} 图片改变时的回调函数 
-  // overlayBackgroundColor:'rgba(0,0,0,0.8)' 遮罩层的背景颜色
-});
+    <script>
+    $(function(){
+      var total = 23;
+      var imageList = Array.from(Array(total), function(value, index) {
+        return 'img/' + (index + 1) + '.png';
+      });
 
-$(function(){
-
-    //返回顶部 
-    $(window).scroll(function(){
+      imageList.forEach(function(image) {
+        $('.gallery').append('<div><a href="' + image + '" data-caption="标题"><img src="' + image + '" alt=""></a></div>');
+      });
+      //返回顶部 
+      $(window).scroll(function(){
         var sc=$(window).scrollTop();
         var rwidth=$(window).width()
         if(sc>500){
-            $("#goTopBtn").css("display","block");
-            $("#goTopBtn").css("left",(rwidth-106)+"px")
+          $("#goTopBtn").css("display","block");
+          $("#goTopBtn").css("left",(rwidth-106)+"px")
         }else{
-            $("#goTopBtn").css("display","none");
+          $("#goTopBtn").css("display","none");
         }
-    })
-    $("#goTopBtn").click(function(){
+      })
+      $("#goTopBtn").click(function(){
         var sc=$(window).scrollTop();
         $('body,html').animate({scrollTop:0},100);
-    })
+      })
 
-    $(".allnews").click(function () {
+      $(".allnews").click(function () {
         $("#allcon").css("height", "auto");
         $(this).hide(1000);
-    });
-})
-
-</script>
-    </body>
+      });
+      baguetteBox.run('.gallery', {
+        // 配置参数
+        buttons:Boolean,//是否显示导航按钮。
+        noScrollbars:true,//是否在显示时隐藏滚动条。
+        titleTag:true,//是否使用图片上的title属性作为图片标题
+        async:false,//是否异步加载文件。
+        afterShow:function(){//显示遮罩层之后的回调函数。   
+          $(".pressing").fadeIn();
+        },
+        afterHide:function(){//隐藏遮罩层之后的回调函数。 
+          $(".pressing").fadeOut(); 
+        },
+        // preload:5,  //预加载多少个文件。
+        // onChange: function(currentIndex, imagesCount){}, // 图片改变时的回调函数 
+        // overlayBackgroundColor:'rgba(0,0,0,0.8)', // 遮罩层的背景颜色
+      });
+    })
+    </script>
+  </body>
 </html>
