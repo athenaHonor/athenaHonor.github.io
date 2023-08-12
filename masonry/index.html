@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>全屏预览图片画廊</title>
+	<link rel="stylesheet" href="css/chromagallery.min.css">
+	<style type="text/css">
+		body,html
+		{ height: 100%; background-color: #191919; 		}
+		.content
+		{
+			width: 100%;
+			height: 100%;
+			margin: 10px auto;
+		}
+		@media screen and (min-width: 980px) /* Desktop */ {
+		  .content {
+		    width: 70%;
+		  }
+		}		
+		.mygallery
+		{
+			margin: 25px 0;
+		}
+	</style>
+</head>
+<body>
+	<article class="container">
+		<div class="content">
+			<div class="chroma-gallery mygallery">
+			</div>
+		</div>
+	
+	</article>
+	
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/chromagallery.pkgd.min.js"></script>
+	<script type="text/javascript">
+		// $(document).ready(function() 
+		// {
+		//     $(".mygallery").chromaGallery();
+		// });
+		$(document).ready(function(){
+			var imageArray = Array.from({ length: 33 }, (_, index) => 'img/' + (index + 1) + '.png');
+
+			var gallery = $('.chroma-gallery.mygallery');
+
+			$.each(imageArray, function(index, imageUrl) {
+				var img = $('<img>', {
+					src: imageUrl,
+					alt: "",
+					'data-largesrc': imageUrl
+				});
+				
+				gallery.append(img);
+			});
+			$(".mygallery").chromaGallery
+		    ({
+		        color:'#000',
+		        gridMargin:15,
+		        maxColumns:5,
+		        dof:true,
+		        screenOpacity:0.8
+		    });
+		});
+	</script>
+</body>
+</html>
