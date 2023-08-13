@@ -44,7 +44,8 @@
 		//     $(".mygallery").chromaGallery();
 		// });
 		$(document).ready(function(){
-			var imageArray = Array.from({ length: 33 }, (_, index) => 'img/' + (index + 1) + '.png');
+			var total = 33;
+			var imageArray = Array.from({ length: total }, (_, index) => 'img/' + (index + 1) + '.png');
 
 			var gallery = $('.chroma-gallery.mygallery');
 
