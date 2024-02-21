@@ -44,12 +44,8 @@
 		//     $(".mygallery").chromaGallery();
 		// });
 		$(document).ready(function(){
-			var total = 50;
-			var imageArray = Array.from({ length: total }, (_, index) => 'gif/' + (index + 1) + '.gif');
-			if(localStorage.getItem('imageType') === 'png') {
-				total = 40;
-				imageArray = Array.from({ length: total }, (_, index) => 'img/' + (index + 1) + '.png');
-			}
+			var total = 40;
+			var imageArray = Array.from({ length: total }, (_, index) => 'img/' + (index + 1) + '.png');
 
 			var gallery = $('.chroma-gallery.mygallery');
 
